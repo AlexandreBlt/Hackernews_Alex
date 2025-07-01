@@ -26,9 +26,9 @@ class PostsController < ApplicationController
         @post.unliked_by(current_user)
         respond_to do |format|
           format.turbo_stream do
-            render turbo_stream: turbo_stream.replace("post_#{@post.id}", partial: "pages/post", locals: { post: @post, alert: "Vous avez déjà voté." })
+            render turbo_stream: turbo_stream.replace("post_#{@post.id}", partial: "pages/post", locals: { post: @post })
           end
-          format.html { redirect_to root_path, alert: "Vous avez déjà voté." }
+          format.html { redirect_to root_path}
         end
     end
   end
