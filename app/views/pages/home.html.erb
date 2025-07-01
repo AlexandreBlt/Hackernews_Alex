@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="bg-gray">
+  <div id="posts" class="posts">
+    <% @posts.each do |post|  %>
+        <%= render "pages/post", post: post %>
+    <% end %>
+  </div>
+</div>

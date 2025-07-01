@@ -1,1 +1,18 @@
-// Specific CSS for your home-page
+.text-body {
+    --bs-text-opacity: 1;
+    color: rgb(130, 130, 129) !important;
+    font-size: small;
+}
+
+.bg-gray {
+    background-color: #f6f6ef;
+}
+
+a {
+  color: #FF6600 !important
+}
+
+h6 {
+  font-size: 1rem;
+  color: black !important;
+}

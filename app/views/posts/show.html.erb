@@ -1,0 +1,29 @@
+<div class="bg-gray p-4">
+<h1><%= @post.title %></h1>
+<div class="content">
+<%= link_to @post.url, class:"text-decoration-none"%>
+<p class="">Posted by <%= @post.user.username %></p>
+|
+<p class="">Votes: <%= @post.votes_for.size %></p >
+|
+<p class="">Comments: <%= @post.comments.count %></p>
+</div>
+<div>
+  <p><%= @post.content %></p>
+</div>
+<div class="comments">
+  <% @post.comments.each do |comment| %>
+    <div class="comment">
+    <p class="info">Posted on <%= comment.created_at.strftime("%B %d, %Y") %></p>
+      <p><%= comment.content %></p>
+<p class="user">By <%= comment.user.username %></p>
+</div>
+  <% end %>
+  <div class="">
+    <%= simple_form_for [@post, @comment] do |f| %>
+  <%= f.input :content, as: :text, input_html: { rows: 3 }, label: false %>
+  <%= f.submit "Leave a comment", class:"btn btn-warning text-white" %>
+<% end %>
+
+</div>
+</div>
