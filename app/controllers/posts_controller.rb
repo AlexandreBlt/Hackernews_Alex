@@ -1,10 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:upvote]
-
-  def index
-    @posts = Post.includes(:user).order(created_at: :desc)
-  end
+  before_action :set_post, only: [:show]
 
   def show
     set_post
